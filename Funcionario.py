@@ -17,8 +17,11 @@ class Funcionario:
   def valida_data(data):
     pattern = r"^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$"
 
-    if not re.match(pattern, data):
-      print("Data inválida. Por favor, insira uma data no formato dd/MM/YYYY")
-      return
+    while True:
+      if not re.match(pattern, data):
+        print("Data inválida. Por favor, insira uma data no formato dd/MM/YYYY")
+        continue
+      else:
+        break
 
     return data
